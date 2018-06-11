@@ -15,19 +15,32 @@
     <!-- navbar -->
 
     <!-- div for instructions and game start -->
-    <div></div>
+    <div id='instructions'>
+        <h1>Mega Trivia!</h1>
+        <p>You will be shown 1 question at a time. You will have 10 seconds to answer each question. If you are wrong or run out of time you will be shown the correct answer and proceed to the next question. At the end of the game you will be shown your total right/wrong answers and given the option to try again.</p>
+    </div>
     <!-- header maybe jumbotron -->
 
     <!-- div for timer -->
-    <div></div>
+    <div id='timer'>
+        <div>Time Left:<span id='countdown'> 10</span></div>
+    </div>
     <!-- div for questions -->
-    <div></div>
+    <div id='questionsField'>
+        <span class='questions'></span>
+        <span class='answers'></span>
+    </div>
     <!-- div for correct answer congrats! shows and hides question divs -->
-    <div></div>
+    <div id='winScreen'>
+        <h1>That is Correct!</h1>
+    </div>
     <!-- final screen div for stats after all questions answered also restart button-->
-    <div></div>
-    <button class ='btn'>Restart</button>
-
+    <div id='statScreen'>
+        <h1>Your Scores!</h1>
+        <div class='score'>Correct Answers:<span id='rightAnswers'></span></div>
+        <div class='score'>Incorrect Answers:<span id='wrongAnswers'></span></div>
+    <button class ='btn' id='restart'>Restart</button>
+    </div>
 
 </body>
 </html>
