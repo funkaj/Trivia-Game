@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Trivia Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
 </head>
+
 <body>
     <!-- navbar -->
 
     <!-- div for instructions and game start -->
     <div id='instructions'>
         <h1>Mega Trivia!</h1>
-        <p>You will be shown 1 question at a time. You will have 10 seconds to answer each question. If you are wrong or run out of time you will be shown the correct answer and proceed to the next question. At the end of the game you will be shown your total right/wrong answers and given the option to try again.</p>
+        <p>You will be shown 1 question at a time. You will have 10 seconds to answer each question. If you are wrong or run
+            out of time you will be shown the correct answer and proceed to the next question. At the end of the game you
+            will be shown your total right/wrong answers and given the option to try again.</p>
     </div>
     <!-- header maybe jumbotron -->
 
     <!-- div for timer -->
     <div id='timer'>
-        <div>Time Left:<span id='countdown'> 10</span></div>
+        <div>Time Left:
+            <span id='countdown'> 10</span>
+        </div>
     </div>
     <!-- div for questions -->
     <div id='questionsField'>
-        <span class='questions'></span>
-        <span class='answers'></span>
+        <div>Question:
+            <span class='questions'></span>
+        </div>
+        <div class='answers'>
+            <div>Answer:
+                <span id="answer-input" type="text"></span>
+            </div>
+        </div>
     </div>
     <!-- div for correct answer congrats! shows and hides question divs -->
     <div id='winScreen'>
@@ -37,10 +52,15 @@
     <!-- final screen div for stats after all questions answered also restart button-->
     <div id='statScreen'>
         <h1>Your Scores!</h1>
-        <div class='score'>Correct Answers:<span id='rightAnswers'></span></div>
-        <div class='score'>Incorrect Answers:<span id='wrongAnswers'></span></div>
-    <button class ='btn' id='restart'>Restart</button>
+        <div class='score'>Correct Answers:
+            <span id='rightAnswers'></span>
+        </div>
+        <div class='score'>Incorrect Answers:
+            <span id='wrongAnswers'></span>
+        </div>
+        <button class='btn' id='restart'>Restart</button>
     </div>
 
 </body>
+
 </html>
