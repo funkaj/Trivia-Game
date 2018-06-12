@@ -47,9 +47,10 @@ $(document).ready(function () {
         }
     ]
 
-    let userAnswer = [];
-    
-    console.log(questions.question[0])
+
+
+
+
     //countdown timer
     function timer() {
         var timeleft = 10;
@@ -57,7 +58,7 @@ $(document).ready(function () {
             timeleft--;
             document.getElementById("countdown").textContent = ' ' + timeleft;
             if (timeleft <= 0)
-            clearInterval(downloadTimer)
+                clearInterval(downloadTimer)
         }, 1000);
     }
     //new game function
@@ -74,28 +75,38 @@ $(document).ready(function () {
         rightAnswers++
         countdownTimer = 0
         $('#winScreen').show()
-        
+
     }
     //userWrongTime function will display correct answer wait a few seconds and show next question
     function userWrongTime() {
         countdownTimer = 0
         wrongAnswers++
-        
+
     }
     //game function loops to get and display questions and user input start/end timer and redirect to win or lose function
     function game() {
-        // for (var i = 0; i < questions.length; i++) {}
-        $('.questions').text(questions[0].question)
-        
-    }
+        var currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+        $('.questions').text('Question: ' + currentQuestion.question)
+        console.log(currentQuestion) 
+            var questionsAnswer = currentQuestion.answer
+            for (var i = 0; i < questionsAnswer.length; i++) {
+                var displayAnswers = $('<div class="answers">')
+                displayAnswers.append($('<p class="btn">' + questionsAnswer + '</p>'))
+                
 
-    //function to display user stats when all questions are answered with a restart button
-    function statScreen() {
-        $('#rightAnswers').text(rightAnswers)
-        $('#wrongAnswers').text(wrongAnswers)
-        $('#restart').on('click', function () {
-            newGame()
-        })
-    }
+                $('#questionsField').append(displayAnswers)
+                console.log(questionsAnswer)
+            }
+        
+}
+
+//function to display user stats when all questions are answered with a restart button
+function statScreen() {
+    $('#rightAnswers').text(rightAnswers)
+    $('#wrongAnswers').text(wrongAnswers)
+    $('#restart').on('click', function () {
+        newGame()
+    })
+}
 
 })
