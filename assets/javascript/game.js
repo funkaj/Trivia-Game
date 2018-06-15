@@ -1,5 +1,6 @@
 // document ready
 $(document).ready(function () {
+    $('.jumbotron').hide();
     $('#timer').hide();
     $('#questionsField').hide();
     $('.questions').hide();
@@ -10,6 +11,7 @@ $(document).ready(function () {
         $('#instructions').hide();
         newGame();
     })
+
     // assign varibles 
     let rightAnswers = 0;
     let wrongAnswers = 0;
@@ -17,63 +19,170 @@ $(document).ready(function () {
     // create object array of questions and answers
     let questions = [{
         question: "What was Mega-Man's original Japanese name?",
-        answer: ["Rock-man", "Blue-Man", "Man-Man", "Zero"],
-        correctAnswer: "Rock-Man",
+        answers: [{
+            name: "Rock-man",
+            isCorrect: 1
+        },
+        {
+            name: "Blue-Man",
+            isCorrect: 0
+        },
+        {
+            name: "Man-Man",
+            isCorrect: 0
+        },
+        {
+            name: "Zero",
+            isCorrect: 0
+        }],
         image: "assets/images/rockMan.jpeg"
     },
     {
         question: "Who is the creator of Mega-Man in the game story?",
-        answer: ["Dr. Wily", "Dr. Who", "Dr. Suess", "Dr. Light"],
-        correctAnswer: "Dr. Light",
+        answers: [{
+            name: "Dr. Wily",
+            isCorrect: 0
+        },
+        {
+            name: "Dr. Who",
+            isCorrect: 0
+        },
+        {
+            name: "Dr. Suess",
+            isCorrect: 0
+        },
+        {
+            name: "Dr. Light",
+            isCorrect: 1
+        }],
         image: "assets/images/drLight.jpeg"
     },
     {
         question: "Who is Mega-Man trying to save the world from?",
-        answer: ["Dr. Doom", "Dr. Wily", "Billy", "Dr. Evil"],
-        correctAnswer: "Dr. Wily",
+        answers: [{
+            name: "Dr. Doom",
+            isCorrect: 0
+        },
+        {
+            name: "Dr. Wily",
+            isCorrect: 1
+        },
+        {
+            name: "Billy",
+            isCorrect: 0
+        },
+        {
+            name: "Dr. Evil",
+            isCorrect: 0
+        }],
         image: "assets/images/drWily.jpeg"
     },
     {
         question: "Who is Mega-Man's brother?",
-        answer: ["Proto-Man", "Zero", "Rush", "Astro-Boy"],
-        correctAnswer: "Proto-Man",
+        answers: [{
+            name: "Proto-Man",
+            isCorrect: 1
+        },
+        {
+            name: "Zero",
+            isCorrect: 0
+        },
+        {
+            name: "Rush",
+            isCorrect: 0
+        },
+        {
+            name: "Astro-Boy",
+            isCorrect: 0
+        }],
         image: "assets/images/protoMan.jpeg"
     },
     {
         question: "What is Mega-Man's sisters name?",
-        answer: ["Roll", "Mega-Woman", "Robot-Girl", "Vicki"],
-        correctAnswer: "Roll",
+        answers: [{
+            name: "Roll",
+            isCorrect: 0
+        },
+        {
+            name: "Mega-Woman",
+            isCorrect: 1
+        },
+        {
+            name: "Robot-Girl",
+            isCorrect: 1
+        },
+        {
+            name: "Vicki",
+            isCorrect: 1
+        }],
         image: "assets/images/roll.jpeg"
-    }
-    ]
+    }]
 
     console.log(rightAnswers)
     console.log(wrongAnswers)
 
     //countdown timer
-    function timer() {  
+    function timer() {
         var timeLeft = 10;
-         
         var guessTimer = setInterval(function () {
             timeLeft--;
             document.getElementById("countdown").textContent = ' ' + timeLeft;
             if (timeLeft <= 0) {
-                console.log('timeLeft')
                 clearInterval(guessTimer)
-                userWrong() 
-                timeLeft=10
+                userWrong()
+                timeLeft = 10
             }
-            
+
         }, 1000);
+
+    }
+    
+    //game function loops to get and display questions and user input start/end timer and redirect to win or lose function
+    function game() {
+        let currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+        $('.questions').text('Question: ' + currentQuestion.question)
+        let questionAnswers = currentQuestion.answers //loop?
+        let newDivCounter = 1
+        let results = []
+        // questionAnswers.forEach(function (answer) {
+        //     if (answer)
+        //         results.push(answer)
+        // })
+        // console.log(results)
+
+        for (var i = 0; i < questionAnswers.length; i++) {
+            let $validate = currentQuestion.answers.isCorrect
+            var displayAnswers = $('<div class="answers row"></div>')
+            var answer = questionAnswers[i]
+            var $newDivId = displayAnswers.append($(`<div class="btn col-12 mt-4" name="isCorrect${$validate}">` + answer.name + `</div>`))
+            displayAnswers.attr("id", "newBtn" + newDivCounter++);
+            $('#questionsField').append($newDivId)
+      
+        
+            
+        $('.btn').on('click', function () {
+            
+          let guess = document.getElementsByName('isCorrect')
+            
+                if (guess > 0) {
+                    console.log('Finally!')
+                    userCorrect();
+                } else {
+                    console.log('WRONG!')
+                    userWrong();
+                }
+        })
+    } 
         
     }
+
     //new game function
     function newGame() {
-        console.log('newGame activated')
+        $('.jumbotron').show()
         $('#timer').show()
         $('.questions').show()
         $('.answers').show()
-        $('#questionsField').show() 
+        $('#questionsField').show()
         game()
     }
     //userCorrect function should hide other screens for a few seconds then load new game
@@ -89,7 +198,7 @@ $(document).ready(function () {
     }
     //userWrongTime function will display correct answer wait a few seconds and show next question
     function userWrong() {
-        console.log('userWrong activated')
+
         currentQuestion = []
         answer = []
         wrongAnswers++
@@ -97,77 +206,8 @@ $(document).ready(function () {
         $('.answers').remove()
         game()
     }
-    //game function loops to get and display questions and user input start/end timer and redirect to win or lose function
-    function game() {
-        console.log('game activated') 
-        timer()
-        var currentQuestion = questions[Math.floor(Math.random() * questions.length)];
-        $('.questions').text('Question: ' + currentQuestion.question)
-        console.log(currentQuestion.question)
-        // console.log(currentQuestion.correctAnswer)
-        var questionsAnswer = currentQuestion.answer
-        var newDivCounter = 1
-        
-        for (var i = 0; i < questionsAnswer.length; i++) {
-            var displayAnswers = $('<div class="answers"></div>')
-            var answer = currentQuestion.correctAnswer
-            var $newDivId = displayAnswers.append($('<div class="btn">' + questionsAnswer[i] + '</div>'))
-            displayAnswers.attr("id", "newBtn" + newDivCounter++);
-            $('#questionsField').append($newDivId)
-            // console.log(questionsAnswer)
-            console.log(answer)
-        }
-        $('#newBtn1').on('click', function () {
-            if (questionsAnswer == answer) {
-                console.log('Correct!')
-                userWin();
-            } else {
-                userWrong();
-            }
-        })
-        $('#newBtn2').on('click', function () {
-            if (questionsAnswer == answer) {
-                console.log('Correct!')
-                 userWin();
-             } else {
-                 userWrong();
-             }
-         })
-         $('#newBtn3').on('click', function () {
-             if (questionsAnswer == answer) {
-                console.log('Correct!')
-                 userWin();
-             } else {
-                 userWrong();
-             }
-         })
-         $('#newBtn4').on('click', function () {
-            
-             if (questionsAnswer == answer) {
-                console.log('Correct!')
-                 userWin();
-             } else {
-                 userWrong();
-             }
-         })
-        
-        // $('.btn').on('click', function (e) {
-        //     console.log("One of the buttons was pushed")
-        //     var answer = currentQuestion.correctAnswer
-        //     console.log("this is the " + answer)
-        //     if (e == "#newBtn1") {
-        //         console.log('Correct!')
-        //         userCorrect()
-
-        //     }
-        //     else {
-        //         console.log('Wrong!')
-        //         userWrong()
-        //     }
-        // })
-    }
-
     //function to display user stats when all questions are answered with a restart button
+
     function statScreen() {
         $('#rightAnswers').text(rightAnswers)
         $('#wrongAnswers').text(wrongAnswers)
@@ -175,5 +215,6 @@ $(document).ready(function () {
             newGame()
         })
     }
+    
 
 })
