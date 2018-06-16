@@ -122,18 +122,14 @@ nav a {
    
     font-size: 18px;
 }
+/* ----- quiz ----- */
 #questionField {
     display: flex;
     justify-content: center;
     flex-direction: column;
 
 }
-.button {
-    display: block;
-    background: #2451b3;
-    border: solid 1px rgb(169, 245, 255);
-    border-radius: 40px;
-}
+
 .questions{
   flex:1;
   color: rgb(54, 54, 54);
@@ -143,7 +139,6 @@ nav a {
    font-weight: bold;
 }
 .row {
-    
     margin-right: 10px;
     margin-left: 10px;
 }
@@ -158,6 +153,94 @@ nav a {
     color: rgb(235, 235, 235);
 
 }
+/* ---- statSreen ---- */
+#statScreen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+#statScreen h1 {
+    flex:1;
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    font-size: 2.5rem;
+    color: yellow;
+}
+.score  {
+    flex:1;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#rightAnswers{
+    flex:1;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;    
+}
+#wrongAnswers {
+    flex:1;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;    
+}
+.button {
+    flex:1;
+    font-size: 1.7rem;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    display: block;
+    background: #2451b3;
+    border: solid 1px rgb(169, 245, 255);
+    border-radius: 20px;
+    max-width: 200px;
+    height: 60px;
+    margin-top: auto;
+}
+.col-3 {
+    max-width: none;
+}
+.gif{
+    width: 130px;
+    height: 100px;
+}
+/* ---- winscreen ---- */
+#winScreen h1{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Monoton', cursive;
+    color: rgb(243, 227, 0);
+}
+#overlay {
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/Wilybegging.gif'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2; 
+    cursor: pointer; 
+}
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
 @-webkit-keyframes animate {
     0% {
         transform: scale(1);
@@ -173,6 +256,15 @@ nav a {
 }
 
 @media screen and (min-width: 1023px) {
+    #winScreen h1{
+        margin-top: -20px;
+    }
+    #statScreen h1 {
+        margin-top: -20px;
+    }
+    .button {
+        margin-left: 415px;
+    }
     #timer  {
         font-size: 2rem;
     }
@@ -194,6 +286,25 @@ nav a {
 }
 }
 @media screen and (min-width: 768px) {
+    .gif {
+        width:300px;
+        height: 250px;
+    }
+    .score  {
+        font-size: 1.5rem;
+    }
+    #rightAnswers{
+        font-size: 1.5rem;    
+    }
+    #wrongAnswers {
+        font-size: 1.5rem;
+    }
+    #statScreen h1 {
+       font-size: 2.5rem;
+    }
+    .button {
+        margin-left: 100px;
+    }
     #timer  {
         font-size: 1.5rem;
     }
@@ -202,7 +313,7 @@ nav a {
 }
     .jumbotron h1 {
         padding-top: 30px;
-        font-size: 6rem;
+        font-size: 5rem;
     }
 .jumbotron{
     height: 300px;
@@ -215,7 +326,24 @@ nav a {
     padding-top: 8px;
 }
 }
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1365px) {
+    .gif{
+        z-index: 1;
+        height: 250px;
+        margin-top:-150px;
+    }
+    #statScreen h1 {
+        font-size: 4rem;
+     }
+    .score  {
+        font-size: 2.5rem;
+    }
+    #rightAnswers{
+        font-size: 2.5rem; 
+    }
+    #wrongAnswers {
+        font-size: 2.5rem;   
+    }
     #timer  {
         font-size: 2rem;
     }
@@ -234,5 +362,8 @@ nav a {
   .btn {  
       font-size: 2rem;
     padding-top: 15px;
+}
+.button {
+    margin-left: 580px;
 }
 }

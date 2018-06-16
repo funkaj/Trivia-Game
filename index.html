@@ -74,7 +74,7 @@
     </div>
         </div>
       </div>
-    
+    <div id='overlay'></div>
     <!-- div for questions -->
     <div id='questionsField' class='container'>
         <div class = 'row'>
@@ -84,8 +84,8 @@
 
     </div>
     <!-- div for correct answer congrats! shows and hides question divs -->
-    <div id='winScreen'>
-        <h1>That is Correct!</h1>
+    <div id='winScreen' class='row'>
+        <h1 class='col-12'>That is Correct!</h1>
     </div>
     <!-- final screen div for stats after all questions answered also restart button-->
     <div id='statScreen'>
@@ -96,7 +96,11 @@
         <div class='score'>Incorrect Answers:
             <span id='wrongAnswers'></span>
         </div>
-        <button class='button' id='restart'>Restart</button>
+        
+        <div class='row'>
+        <img src="assets/images/WhimsicalIlliterateBarebirdbat.gif" class='gif col-3' alt="mega-man">
+        <button class='button col-9' id='restart'>Restart</button>
+    </div>
     </div>
 
 </body>
