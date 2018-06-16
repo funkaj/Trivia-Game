@@ -1,11 +1,15 @@
+html {
+    position: relative;
+    min-height: 100vh;
+}
 body {
-    background: #5ecbc9;
+    background: #6ac9dd;
 }
 /* ===== How to Play ===== */
 .popup {
     position: fixed;
     left: 50%;
-    top: 55%;
+    top: 50%;
     z-index: 1;
 }
 .wrapper h1, h2 {
@@ -16,6 +20,7 @@ body {
 
 .popup .wrapper {
     position: relative;
+    margin-top: -50%;
     left: -50%;
     border-radius: 10px;
     background: radial-gradient(transparent, #1e6ac7), url(https://images.pexels.com/photos/2162/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
@@ -42,7 +47,7 @@ body {
     right: -2px;
     top: -2px;
     bottom: -2px;
-    animation: animate 2.4s linear infinite;
+    animation: animate 5s linear infinite;
 }
 
 .instructions {
@@ -99,17 +104,59 @@ nav a {
     margin-left: 0px;
 }
 /* ===== jumbotron ===== */
+.jumbotron h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 2.5rem;
+}
 .jumbotron{
+    display: flex;
+    align-items: center;
     background-image: url('../images/mega-man-3-1200x630-c-ar1.91.jpg');
     background-size: cover;
     color: yellow;
-}
-.btn {
+    height: 200px;
+    border-bottom: 5px solid yellow;
     
+}
+#countdown {
+   
+    font-size: 18px;
+}
+#questionField {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.button {
     display: block;
     background: #2451b3;
     border: solid 1px rgb(169, 245, 255);
     border-radius: 40px;
+}
+.questions{
+  flex:1;
+  color: rgb(54, 54, 54);
+   text-align: center;
+   margin-top: -20px;
+   font-size: 1.2rem;   
+   font-weight: bold;
+}
+.row {
+    
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.btn {  
+    height: 8vh;
+    flex:1;
+    padding-top: 12px;
+    display: block;
+    background: #2451b3;
+    border: solid 1px rgb(169, 245, 255);
+    border-radius: 10px;
+    color: rgb(235, 235, 235);
+
 }
 @-webkit-keyframes animate {
     0% {
@@ -123,4 +170,69 @@ nav a {
         transform: scale(1);
         opacity: 0;
     }
+}
+
+@media screen and (min-width: 1023px) {
+    #timer  {
+        font-size: 2rem;
+    }
+#countdown{
+    font-size: 2rem;
+}
+    .jumbotron h1 {
+        font-size: 6rem;
+    }
+.jumbotron{
+    height: 500px;
+}
+.questions{
+     font-size: 2.2rem;   
+  }
+  .btn {  
+      font-size: 2rem;
+    padding-top: 30px;
+}
+}
+@media screen and (min-width: 768px) {
+    #timer  {
+        font-size: 1.5rem;
+    }
+#countdown{
+    font-size: 1.5rem;
+}
+    .jumbotron h1 {
+        padding-top: 30px;
+        font-size: 6rem;
+    }
+.jumbotron{
+    height: 300px;
+}
+.questions{
+     font-size: 1.7rem;   
+  }
+  .btn {  
+      font-size: 1.7rem;
+    padding-top: 8px;
+}
+}
+@media screen and (min-width: 1366px) {
+    #timer  {
+        font-size: 2rem;
+    }
+#countdown{
+    font-size: 2rem;
+}
+    .jumbotron h1 {
+        font-size: 6rem;
+    }
+.jumbotron{
+    height: 450px;
+}
+.questions{
+     font-size: 2.2rem;   
+  }
+  .btn {  
+      font-size: 2rem;
+    padding-top: 15px;
+}
 }
