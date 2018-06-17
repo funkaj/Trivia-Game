@@ -28,6 +28,12 @@ body {
     border: 5px solid #5ecbc9;
     color: rgb(221, 209, 223);
 }
+#imageHolder {
+ 
+    margin-left: 70px;
+    width:200px;
+    height: 200px;
+}
 /* popup pulsing border animation */
 .wrapper:before,
 .wrapper:after {
@@ -114,7 +120,7 @@ nav a {
     background-image: url('../images/mega-man-3-1200x630-c-ar1.91.jpg');
     background-size: cover;
     color: yellow;
-    height: 200px;
+    height: 180px;
     border-bottom: 5px solid yellow;
     
 }
@@ -284,6 +290,12 @@ nav a {
       font-size: 2rem;
     padding-top: 30px;
 }
+#imageHolder {
+ 
+    margin-left: 350px;
+    width:300px;
+    height:300px;
+}
 }
 @media screen and (min-width: 768px) {
     .gif {
@@ -365,5 +377,28 @@ nav a {
 }
 .button {
     margin-left: 580px;
+}
+#imageHolder {
+ 
+    margin-left: 470px;
+    width:400px;
+    height: 400px;
+}
+}
+@media screen and (min-width: 1500px) {
+    .gif{
+        z-index: 1;
+        height: 400px;
+        margin-top:-50px;
+    }
+    .btn {  
+        font-size: 2rem;
+      padding-top: 30px;
+  }
+  #imageHolder {
+ 
+    margin-left: 900px;
+    width:700px;
+    height: 700px;
 }
 }
