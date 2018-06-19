@@ -40,6 +40,112 @@ $(document).ready(function () {
         image: "assets/images/rockMan.jpeg"
     },
     {
+        question: "What is Mega-Mans weapon called?",
+        answers: [{
+            name: "Buster-Gun",
+            isCorrect: 0
+        },
+        {
+            name: "Mega-Gun",
+            isCorrect: 0
+        },
+        {
+            name: "Mega-Buster",
+            isCorrect: 1
+        },
+        {
+            name: "Mega-Blaster",
+            isCorrect: 0
+        }
+        ],
+        image: "assets/images/rockMan.jpeg"
+    },
+    {
+        question: "What was Mega-Mans original function?",
+        answers: [{
+            name: "Industrial robot",
+            isCorrect: 0
+        },
+        {
+            name: "Bad-ass",
+            isCorrect: 0
+        },
+        {
+            name: "Police robot",
+            isCorrect: 0
+        },
+        {
+            name: "Household robot",
+            isCorrect: 1
+        }
+        ],
+        image: "assets/images/rockMan.jpeg"
+    },
+    {
+        question: "Which one of these Robot Bosses is from Mega-Man 1?",
+        answers: [{
+            name: "Snake-Man",
+            isCorrect: 0
+        },
+        {
+            name: "Splash-Woman",
+            isCorrect: 0
+        },
+        {
+            name: "Guts-Man",
+            isCorrect: 1
+        },
+        {
+            name: "Metal-Man",
+            isCorrect: 0
+        }
+        ],
+        image: "assets/images/rockMan.jpeg"
+    },
+    {
+        question: "How many Robot bosses are in Mega-Man 2?",
+        answers: [{
+            name: "8",
+            isCorrect: 0
+        },
+        {
+            name: "6",
+            isCorrect: 1
+        },
+        {
+            name: "4",
+            isCorrect: 0
+        },
+        {
+            name: "1,000",
+            isCorrect: 0
+        }
+        ],
+        image: "assets/images/rockMan.jpeg"
+    },
+    {
+        question: "What is Mega-Mans' nickname?",
+        answers: [{
+            name: "Robot Guy",
+            isCorrect: 0
+        },
+        {
+            name: "Blue",
+            isCorrect: 0
+        },
+        {
+            name: "Awesome Robot Dude",
+            isCorrect: 0
+        },
+        {
+            name: "The Blue Bomber",
+            isCorrect: 1
+        }
+        ],
+        image: "assets/images/rockMan.jpeg"
+    },
+    
+    {
         question: "Who is the creator of Mega-Man in the game story?",
         answers: [{
             name: "Dr. Wily",
@@ -206,7 +312,7 @@ $(document).ready(function () {
         $('#winScreen').show()
         $('.answers').remove()
         timerStop(guessTimer);
-        if (rightAnswers + wrongAnswers < questions.length) {
+        if (rightAnswers + wrongAnswers < 5) {
             setTimeout(correct, 2000);
         } else {
             statScreen()
