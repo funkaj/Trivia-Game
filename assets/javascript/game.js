@@ -2,7 +2,6 @@
 $(document).ready(function () {
 
     let guessTimer;
-
     let timeLeft;
 
     $('.jumbotron').hide();
@@ -298,7 +297,7 @@ $(document).ready(function () {
         $('.answers').remove()
         timerStop();
         if (rightAnswers + wrongAnswers < 5) {
-            setTimeout(correct, 1000);
+            setTimeout(correct, 5000);
         } else {
             statScreen()
         }
