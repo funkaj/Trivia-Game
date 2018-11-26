@@ -29,7 +29,6 @@ body {
     color: rgb(221, 209, 223);
 }
 #imageHolder {
- 
     margin-left: 70px;
     width:200px;
     height: 200px;
@@ -133,7 +132,6 @@ nav a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
 
 .questions{
