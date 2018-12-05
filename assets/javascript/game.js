@@ -247,10 +247,10 @@ $(document).ready(function () {
     }
 
     function game() {
-        resetTimer()
-        guessTimer = setInterval(function () {
-            timerLoop()
-        }, 1000);
+        // resetTimer()
+        // guessTimer = setInterval(function () {
+        //     timerLoop()
+        // }, 1000);
 
         $(".answers").empty()
 
