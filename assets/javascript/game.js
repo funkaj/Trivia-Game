@@ -5,10 +5,10 @@ $(document).ready(function () {
     let timeLeft;
 
     $('.jumbotron').hide();
-    $('#timer').hide();
-    $('#questionsField').hide();
     $('.questions').hide();
     $('.answers').hide();
+    $('#questionsField').hide();
+    $('#timer').hide();
     $('#winScreen').hide();
     $('#statScreen').hide();
     $('#instructions').on('click', function () {
@@ -247,10 +247,10 @@ $(document).ready(function () {
     }
 
     function game() {
-        // resetTimer()
-        // guessTimer = setInterval(function () {
-        //     timerLoop()
-        // }, 1000);
+        resetTimer()
+        guessTimer = setInterval(function () {
+            timerLoop()
+        }, 1000);
 
         $(".answers").empty()
 
