@@ -228,133 +228,137 @@ $(document).ready(function () {
             ],
             image: "assets/images/roll.jpeg"
         }
-    ]
+    ];
 
     // countdown timer needs to be fixed
-
     let timerLoop = function () {
         timeLeft--;
-        console.log(timeLeft)
         $("#countdown").html(' ' + timeLeft);
         if (timeLeft === 0) {
             userWrong()
-            console.log(`sub-zero ${timeLeft}`)
-        }
+        };
     };
+
     //game function loops to get and display questions and user input start/end timer and redirect to win or lose function
     function resetTimer() {
-        timeLeft = 10
-    }
+        timeLeft = 10;
+    };
 
     function game() {
-        resetTimer()
+        resetTimer();
+
         guessTimer = setInterval(function () {
             timerLoop()
         }, 1000);
 
-        $(".answers").empty()
+        $(".answers").empty();
 
         //tried creating an array so the questions are always in a different order. kept getting duplicates. this does too unfortunatly.
         let currentQuestion = questions[Math.floor(Math.random() * questions.length)];
-        console.log(currentQuestion)
-        $('.questions').text('Question: ' + currentQuestion.question)
-        let questionAnswers = currentQuestion.answers
+    
+        $('.questions').text('Question: ' + currentQuestion.question);
+        let questionAnswers = currentQuestion.answers;
+
         //grab answers from question array, create and place in divs
         for (let i = 0; i < currentQuestion.answers.length; i++) {
-            let $validate = currentQuestion.answers[i].isCorrect
-            let displayAnswers = $('<div class="answers row"></div>')
-            let answer = questionAnswers[i]
-            let $newDivId = displayAnswers.append($(`<div class="btn col-12 mt-4" name="${currentQuestion.answers[i].name}" value="${$validate}">` + answer.name + `</div>`))
-            $('#questionsField').append($newDivId)
-        }
+            let $validate = currentQuestion.answers[i].isCorrect;
+            let displayAnswers = $('<div class="answers row"></div>');
+            let answer = questionAnswers[i];
+            let $newDivId = displayAnswers.append($(`<div class="btn col-12 mt-4" name="${currentQuestion.answers[i].name}" value="${$validate}">` + answer.name + `</div>`));
+            $('#questionsField').append($newDivId);
+        };
 
         $('.btn').on('click', function () {
-            let guess = $(this).attr('value')
+            let guess = $(this).attr('value');
+
             if (guess > 0) {
-                console.log('Finally!')
                 userCorrect();
             } else {
                 userWrong();
-                console.log('WRONG!')
-            }
-        })
-    }
+            };
+        });
+    };
 
     function on() {
         document.getElementById("overlay").style.display = "block";
-    }
+    };
 
     function off() {
         document.getElementById("overlay").style.display = "none";
-    }
+    };
 
     //userCorrect function should hide other screens for a few seconds then load new game
     function userCorrect() {
-        $('#questionsField').hide()
-        rightAnswers++
-        $('#rightAnswers').text(rightAnswers)
-        $('#winScreen').show()
-        $('.answers').remove()
+        $('#questionsField').hide();
+        rightAnswers++;
+        $('#rightAnswers').text(rightAnswers);
+        $('#winScreen').show();
+        $('.answers').remove();
         timerStop();
         if (rightAnswers + wrongAnswers < 5) {
-            setTimeout(correct, 5000);
+            setTimeout(correct, 3000);
         } else {
-            statScreen()
-        }
-    }
+            statScreen();
+        };
+    };
 
     function correct() {
-        game()
-        $('#winScreen').hide()
-        $('#questionsField').show()
-    }
+        game();
+        $('#winScreen').hide();
+        $('#questionsField').show();
+    };
+
     //userWrongTime function will display correct answer wait a few seconds and show next question
     function userWrong() {
-        on()
-        wrongAnswers++
-        $('#wrongAnswers').text(wrongAnswers)
-        timerStop()
+        on();
+        wrongAnswers++;
+        $('#wrongAnswers').text(wrongAnswers);
+        timerStop();
+
         function questionsLeft() {
             // needs to highlight correct answer
             if (rightAnswers + wrongAnswers < 5) {
-                $('.answers').remove()
-                off()
-                game()
+                $('.answers').remove();
+                off();
+                game();
             } else {
-                off()
-                statScreen()
-            }
-        }
+                off();
+                statScreen();
+            };
+        };
+
         setTimeout(questionsLeft, 1000);
-    }
+    };
+
     //new game function
     function newGame() {
-        rightAnswers = 0
-        wrongAnswers = 0
-        $('#winScreen').hide()
-        $('#statScreen').hide()
-        $('.jumbotron').show()
-        $('#timer').show()
-        $('.questions').show()
-        $('.answers').show()
-        $('#questionsField').show()
-        game()
-    }
+        rightAnswers = 0;
+        wrongAnswers = 0;
+        $('#winScreen').hide();
+        $('#statScreen').hide();
+        $('.jumbotron').show();
+        $('#timer').show();
+        $('.questions').show();
+        $('.answers').show();
+        $('#questionsField').show();
+        game();
+    };
+
     //function to display user stats when all questions are answered with a restart button
     function statScreen() {
-        $('#questionsField').hide()
-        $('#winScreen').hide()
-        $('#statScreen').show()
-        $('#rightAnswers').text(rightAnswers)
-        $('#wrongAnswers').text(wrongAnswers)
+        $('#questionsField').hide();
+        $('#winScreen').hide();
+        $('#statScreen').show();
+        $('#rightAnswers').text(rightAnswers);
+        $('#wrongAnswers').text(wrongAnswers);
         $('#restart').on('click', function () {
-            timerStop(guessTimer)
-            newGame()
-        })
-    }
+            timerStop(guessTimer);
+            newGame();
+        });
+    };
+
     // function to clear guesstimer interval
     function timerStop() {
         clearInterval(guessTimer);
-        console.log(`Stop Timer`)
     };
-})
+});

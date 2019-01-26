@@ -8,25 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
 </head>
 <!-- navbar -->
 <header id='masthead'>
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-light">
             <a class="navbar-brand" id='logo' href="index.html">Adam Funk</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,10 +43,7 @@
         <div class="instructions card mb-3 wrapper gameControls">
             <h1 class="card-header">Mega Trivia!</h1>
             <div class="card-body">
-
-                <p class="card-text">You will be shown 1 question at a time. You will have 10 seconds to answer each question. If you are wrong
-                    or run out of time you will be shown the correct answer and proceed to the next question. At the end
-                    of the game you will be shown your total right/wrong answers and given the option to try again.</p>
+                <p class="card-text">You will be shown 1 question at a time. You will have 10 seconds to answer each question. If you are wrong or run out of time you will be shown the correct answer and proceed to the next question. At the end of the game you will be shown your total right/wrong answers and given the option to try again.</p>
                 <span class="text-center">
                     <h2>Click To Play...</h2>
                 </span>
@@ -65,23 +53,21 @@
     <!-- header maybe jumbotron -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">MEGA TRIVA!</h1>
-          <!-- div for timer -->
-    <div id='timer'>
-        <div>Time Left:
-            <span id='countdown'> 10</span>
+            <h1 class="display-4">MEGA TRIVA!</h1>
+            <!-- div for timer -->
+            <div id='timer'>
+                <div>Time Left:
+                    <span id='countdown'> 10</span>
+                </div>
+            </div>
         </div>
     </div>
-        </div>
-      </div>
     <div id='overlay'></div>
     <!-- div for questions -->
     <div id='questionsField' class='container'>
-        <div class = 'row'>
+        <div class='row'>
             <span class='questions col-12'></span>
-
         </div>
-
     </div>
     <!-- div for correct answer congrats! shows and hides question divs -->
     <div id='winScreen' class='row'>
@@ -97,13 +83,17 @@
         <div class='score'>Incorrect Answers:
             <span id='wrongAnswers'></span>
         </div>
-        
         <div class='row'>
-        <img src="assets/images/WhimsicalIlliterateBarebirdbat.gif" class='gif col-3' alt="mega-man">
-        <button class='button col-9' id='restart'>Restart</button>
-    </div>
+            <img src="assets/images/WhimsicalIlliterateBarebirdbat.gif" class='gif col-3' alt="mega-man">
+            <button class='button col-9' id='restart'>Restart</button>
+        </div>
     </div>
 
 </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </html>
