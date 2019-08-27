@@ -25,7 +25,6 @@ body {
 h2 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.6rem;
-
 }
 
 .popup .wrapper {
@@ -33,7 +32,8 @@ h2 {
 	margin-top: -50%;
 	left: -50%;
 	border-radius: 10px;
-	background: radial-gradient(transparent, var(--primary)), url(https://images.pexels.com/photos/2162/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	background: radial-gradient(transparent, var(--primary)),
+		url(https://images.pexels.com/photos/2162/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	opacity: 0.75;
 	border: 5px solid #5ecbc9;
 	color: rgb(221, 209, 223);
@@ -52,20 +52,13 @@ h2 {
 	position: absolute;
 	border-radius: 10px;
 	box-shadow: inset 0 0 5px rgb(250, 248, 215),
-		/* inner white */
-		inset 0px 0 4px #f8ffff,
-		/* inner left magenta short */
-		inset 0px 0 4px #a2ccff,
-		/* inner right cyan short */
-		inset 0px 0 30px #feffff,
-		/* inner left magenta broad */
-		inset 0px 0 30px #b0d4ff,
-		/* inner right cyan broad */
-		0 0 50px rgb(250, 248, 215),
-		/* outer white */
-		-10px 0 80px #f1fcfc,
-		/* outer left magenta */
-		10px 0 80px #b3d5ff;
+		/* inner white */ inset 0px 0 4px #f8ffff,
+		/* inner left magenta short */ inset 0px 0 4px #a2ccff,
+		/* inner right cyan short */ inset 0px 0 30px #feffff,
+		/* inner left magenta broad */ inset 0px 0 30px #b0d4ff,
+		/* inner right cyan broad */ 0 0 50px rgb(250, 248, 215),
+		/* outer white */ -10px 0 80px #f1fcfc,
+		/* outer left magenta */ 10px 0 80px #b3d5ff;
 	left: -2px;
 	right: -2px;
 	top: -2px;
@@ -89,7 +82,7 @@ h2 {
 	width: 100%;
 	overflow: auto;
 	color: rgb(var(--secondary));
-	-webkit-text-stroke-width: .1px;
+	-webkit-text-stroke-width: 0.1px;
 	-webkit-text-stroke-color: var(--primary);
 	background-color: var(--primary);
 }
@@ -122,7 +115,7 @@ nav a {
 	line-height: 40px;
 	text-align: center;
 	color: var(--secondary);
-	-webkit-text-stroke-width: .1px;
+	-webkit-text-stroke-width: 0.1px;
 	-webkit-text-stroke-color: var(--secondary);
 	margin-left: 0px;
 }
@@ -141,11 +134,9 @@ nav a {
 	color: var(--secondary);
 	height: 180px;
 	border-bottom: 5px solid var(--secondary);
-
 }
 
 #countdown {
-
 	font-size: 18px;
 }
 
@@ -179,7 +170,6 @@ nav a {
 	border: solid 1px rgb(169, 245, 255);
 	border-radius: 10px;
 	color: rgb(235, 235, 235);
-
 }
 
 /* ---- statSreen ---- */
@@ -468,5 +458,4 @@ nav a {
 		font-size: 2rem;
 		padding-top: 30px;
 	}
-
 }
